@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-primary: #0b0f19;
+    --bg-secondary: #111726;
+    --bg-card: #141c2e;
+    --border-subtle: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-cyan: #06b6d4;
+    --accent-blue: #0284c7;
+    --accent-glow: rgba(6, 182, 212, 0.12);
+  }
+
+  html.light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: #ffffff;
+    --border-subtle: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --accent-cyan: #0284c7;
+    --accent-blue: #0369a1;
+    --accent-glow: rgba(2, 132, 199, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  code, kbd, samp, pre {
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #253349;
+    border-radius: 4px;
+  }
+  html.light ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334460;
+  }
+  html.light ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* ============================================================
+   LIGHT MODE COMPREHENSIVE OVERRIDES
+   Ensures 100% crisp contrast, legible typography and elegant cards
+   ============================================================ */
+html.light {
+  /* Headings and bold titles */
+  h1, h2, h3, h4, h5, h6 {
+    color: #0f172a !important;
+  }
+
+  /* Card backgrounds & boundaries */
+  .bg-\[\#0e1320\],
+  .bg-slate-900,
+  .bg-slate-900\/90,
+  .bg-slate-900\/80,
+  .bg-slate-900\/60,
+  .bg-slate-900\/40,
+  .bg-slate-900\/30,
+  .bg-slate-950,
+  .bg-slate-950\/90,
+  .bg-slate-950\/85,
+  .bg-slate-950\/80,
+  .bg-slate-950\/60 {
+    background-color: #ffffff !important;
+  }
+
+  /* Distinct inner surfaces (e.g. secondary badges, thumbnail bars) */
+  .bg-slate-800,
+  .bg-slate-800\/80,
+  .bg-slate-800\/60,
+  .bg-slate-800\/50,
+  .bg-slate-800\/40 {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+  }
+
+  /* Subtle card borders */
+  .border-slate-800,
+  .border-slate-800\/90,
+  .border-slate-800\/80,
+  .border-slate-800\/60,
+  .border-slate-700,
+  .border-slate-700\/80,
+  .border-slate-700\/60 {
+    border-color: #e2e8f0 !important;
+  }
+
+  /* General Text Contrast in Light Mode */
+  .text-white {
+    color: #0f172a !important;
+  }
+  .text-slate-100,
+  .text-slate-200 {
+    color: #1e293b !important;
+  }
+  .text-slate-300 {
+    color: #334155 !important;
+  }
+  .text-slate-400 {
+    color: #475569 !important;
+  }
+  .text-slate-500 {
+    color: #64748b !important;
+  }
+
+  /* Clean shadows for light mode cards */
+  .bg-\[\#0e1320\],
+  .rounded-2xl.border,
+  .rounded-xl.border {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  }
+
+  /* Header sticky background in light mode */
+  header {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Inputs and Textareas in Light Mode */
+  input,
+  textarea,
+  select {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  /* Project Card Image gradient overlay in light mode */
+  .from-slate-950 {
+    --tw-gradient-from: rgba(15, 23, 42, 0.92) !important;
+  }
+
+  /* Light mode modal surfaces */
+  .fixed .bg-\[\#0e1320\],
+  .fixed .bg-slate-900 {
+    background-color: #ffffff !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  /* Resume Modal in Light Mode */
+  .fixed .bg-amber-950\/20 {
+    background-color: #fef3c7 !important;
+    border-color: #fde68a !important;
+    color: #92400e !important;
+  }
+  .fixed .text-amber-200,
+  .fixed .text-amber-200\/90 {
+    color: #78350f !important;
+  }
+  .fixed .text-amber-100 {
+    color: #451a03 !important;
+  }
+  .fixed .text-amber-400 {
+    color: #b45309 !important;
+  }
+
+  /* Direct channels in Resume Modal (Telegram & WhatsApp) in light mode */
+  .fixed .bg-sky-950\/30 {
+    background-color: #f0f9ff !important;
+    border-color: #bae6fd !important;
+  }
+  .fixed .bg-sky-950\/30:hover {
+    background-color: #e0f2fe !important;
+  }
+  .fixed .bg-sky-950\/30 .text-white {
+    color: #0369a1 !important;
+  }
+  .fixed .bg-sky-950\/30 .text-sky-300 {
+    color: #0284c7 !important;
+  }
+
+  .fixed .bg-emerald-950\/30 {
+    background-color: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+  }
+  .fixed .bg-emerald-950\/30:hover {
+    background-color: #d1fae5 !important;
+  }
+  .fixed .bg-emerald-950\/30 .text-white {
+    color: #047857 !important;
+  }
+  .fixed .bg-emerald-950\/30 .text-emerald-300 {
+    color: #059669 !important;
+  }
+
+  /* Education & Fellowship Cards in Light Mode */
+  .bg-amber-950\/40,
+  .bg-amber-950\/50 {
+    background-color: #fef3c7 !important;
+    border-color: #fcd34d !important;
+  }
+  .text-amber-400 {
+    color: #d97706 !important;
+  }
+
+  .bg-blue-950\/50 {
+    background-color: #eff6ff !important;
+    border-color: #bfdbfe !important;
+  }
+  .bg-emerald-950\/60,
+  .bg-emerald-950\/50 {
+    background-color: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+  }
+  .text-emerald-400 {
+    color: #059669 !important;
+  }
+
+  /* Footer in light mode */
+  footer {
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Navbar links in light mode */
+  nav button {
+    color: #475569 !important;
+  }
+  nav button:hover,
+  nav button.text-cyan-400 {
+    color: #0284c7 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

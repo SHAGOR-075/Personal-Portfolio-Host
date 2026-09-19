@@ -29,7 +29,8 @@ export default function ContactForm() {
     setError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const API_BASE = import.meta.env.VITE_API_URL || 'https://personal-portfolio-host-mocha.vercel.app';
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

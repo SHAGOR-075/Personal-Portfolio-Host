@@ -4,7 +4,7 @@ import { Download, X, ShieldAlert, Send, MessageSquare, Copy, Check } from 'luci
 
 export default function ResumeModal({ isOpen, onClose }) {
   const [copied, setCopied] = useState(false);
-  const email = 'kharul.shagor@gmail.com';
+  const email = 'mdkharulislamshagor@gmail.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -82,7 +82,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Telegram */}
               <a
-                href="https://t.me/ethan_rivera_cse"
+                href="https://t.me/ShAgOr075"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-sky-50 dark:bg-sky-950/30 hover:bg-sky-100 dark:hover:bg-sky-950/50 border border-sky-200 dark:border-sky-600/40 hover:border-sky-400 dark:hover:border-sky-500 transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-xs"
@@ -96,7 +96,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                       Telegram
                     </div>
                     <div className="text-[11px] font-mono text-sky-600 dark:text-sky-300 truncate">
-                      @ethan_rivera_cse
+                      @ShAgOr075
                     </div>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ export default function ResumeModal({ isOpen, onClose }) {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/8801700000000?text=Hello%20Md.%20Kharul%20Islam%20Shagor,%20I%20would%20like%20to%20request%20your%20resume."
+                href="https://wa.link/jpfxl2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 hover:bg-emerald-100 dark:hover:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-600/40 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all duration-200 flex items-center justify-between group cursor-pointer shadow-xs"
